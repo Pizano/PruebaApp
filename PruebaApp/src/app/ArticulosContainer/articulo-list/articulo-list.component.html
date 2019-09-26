@@ -1,0 +1,88 @@
+<!-- <div class="container">  
+        <input type="button" class="btn btn-primary" (click)="loadAddnew()" data-toggle="modal" 
+        data-target="#myModal" value="Create New">  
+        <hr>  
+        <div *ngIf="!dataavailbale">  
+            <h4> No hay articlos registrados.</h4>  
+        </div>  
+        <table class="table" *ngIf="dataavailbale">  
+        <thead>  
+        <tr>   
+            <th scope="col">Sku_ID</th>  
+            <th scope="col">Sku_Codigo</th>  
+            <th scope="col">Sku_NumeroSerie</th>  
+            <th scope="col">Sku_Descripcion</th>  
+            <th scope="col">Sku_Cantidad</th>  
+            <th scope="col">Sku_Cat_ID</th> 
+            <th scope="col">Sku_Sub_Cat_ID</th>  
+            <th scope="col">Sku_Latitud</th> 
+            <th scope="col">Sku_Longitud</th> 
+            <th scope="col" style="align-content: center">Action</th>  
+        </tr>  
+        </thead>  
+        <tbody>  
+        <tr *ngFor="let e of emplist let i = index ">  
+            <td scope="col">{{e.Sku_ID}}</td>  
+            <td scope="col">{{e.Sku_Codigo}}</td>  
+            <td scope="col">{{e.Sku_NumeroSerie}}</td>  
+            <td scope="col">{{e.Sku_Descripcion}}</td>  
+            <td scope="col">{{e.Sku_Cantidad}}</td>  
+            <td scope="col">{{e.Sku_Cat_ID}}</td>  
+            <td scope="col">{{e.Sku_Sub_Cat_ID}}</td>  
+            <td scope="col">{{e.Sku_Latitud}}</td>  
+            <td scope="col">{{e.Sku_Longitud}}</td>  
+            <td scope="col">  
+            <button type="button" class="btn btn-default btn-primary"
+            (click)="loadnewForm(e.Sku_ID,e.Sku_Codigo,e.Sku_NumeroSerie,e.Sku_Descripcion,e.Sku_Cantidad,e.Sku_Cat_ID,e.Sku_Sub_Cat_ID,e.Sku_Latitud,e.Sku_Longitud)"  
+                data-toggle="modal" data-target="#myModaledit">  
+                <span class="glyphicon glyphicon-edit"></span> Edit  
+            </button>  
+            |  
+            <button type="button" class="btn btn-default btn-danger" (click)="deleteconfirmation(e.Sku_ID)">  
+                <span class="glyphicon glyphicon-trash"></span> Delete  
+            </button>   
+            </td>  
+        </tr>  
+        </tbody>  
+        </table>    
+        <div id="myModal" class="modal fade" role="dialog">  
+        <div class="modal-dialog">  
+        <div class="modal-content">  
+            <div class="modal-header">  
+            <button type="button" class="close" data-dismiss="modal">×</button>  
+            <h4 class="modal-primary">Agregar Articulo</h4>  
+            </div>  
+            <div class="modal-body">  
+            <app-employee-add #empadd (nameEvent)="RefreshData($event)"></app-employee-add>  
+            </div>  
+            <div class="modal-footer">  
+            <button type="button" #closeBtn class="btn btn-danger" data-dismiss="modal">Close</button>  
+            </div>  
+        </div>  
+        </div>  
+        </div>  
+        <div id="myModaledit" class="modal fade" role="dialog">  
+        <div class="modal-dialog">  
+        <div class="modal-content">  
+            <div class="modal-header">  
+            <button type="button" class="close" data-dismiss="modal">×</button>  
+            <h4 class="modal-title">Editar</h4>  
+            </div>  
+            <div class="modal-body">  
+            <app-employeeupdate (nameEvent)="RefreshData($event)" [isReset]="resetForm" #regForm></app-employeeupdate>  
+            </div>  
+            <div class="modal-footer">  
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  
+            </div>  
+        </div>  
+        </div>  
+        </div> -->
+
+        <table class="table table-hover">
+                <tr *ngFor="let emp of service.list">
+                    <td (click)="populateForm(emp)">[{{emp.EMPCode}}]-{{emp.FullName}}</td>
+                    <td (click)="populateForm(emp)">{{emp.Position}}</td>
+                    <td (click)="populateForm(emp)">{{emp.Mobile}}</td>
+                    <td><button (click)="onDelete(emp.Sku_ID)" class="btn btn-sm btn-outline-danger">X</button></td>
+                </tr>
+                </table>

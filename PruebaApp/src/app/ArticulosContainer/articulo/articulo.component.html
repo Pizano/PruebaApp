@@ -1,0 +1,48 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <input type="hidden" name="Sku_ID" #Sku_ID="ngModel" [(ngModel)]="service.formData.Sku_ID">
+                
+        <div class="form-group">
+            <label>Sku Codigo:</label>
+            <input name="Sku_Codigo" #Sku_Codigo="ngModel" [(ngModel)]="service.formData.Sku_Codigo" class="form-control" required>
+            <div class="validation-error" *ngIf="Sku_Codigo.invalid && Sku_Codigo.touched">This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label>Sku_NumeroSerie:</label>
+            <input name="Sku_NumeroSerie" #Sku_NumeroSerie="ngModel" [(ngModel)]="service.formData.Sku_NumeroSerie" class="form-control" required>
+            <div class="validation-error" *ngIf="Sku_NumeroSerie.invalid && Sku_NumeroSerie.touched">This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label>Sku_Descripcion:</label>
+            <input name="Sku_Descripcion" #Sku_Descripcion="ngModel" [(ngModel)]="service.formData.Sku_Descripcion" class="form-control" required>
+            <div class="validation-error" *ngIf="Sku_Descripcion.invalid && Sku_Descripcion.touched">This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label>Sku_Cantidad:</label>
+            <input name="Sku_Cantidad" #Sku_Cantidad="ngModel" [(ngModel)]="service.formData.Sku_Cantidad" class="form-control" required>
+            <div class="validation-error" *ngIf="Sku_Cantidad.invalid && Sku_Cantidad.touched">This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label>Sku_Cat_ID:</label>
+            <input name="Sku_Cat_ID" #Sku_Cat_ID="ngModel" [(ngModel)]="service.formData.Sku_Cat_ID" class="form-control" required>
+            <div class="validation-error" *ngIf="Sku_Cat_ID.invalid && Sku_Cat_ID.touched">This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label>Sku_Sub_Cat_ID:</label>
+            <input name="Sku_Sub_Cat_ID" #Sku_Sub_Cat_ID="ngModel" [(ngModel)]="service.formData.Sku_Sub_Cat_ID" class="form-control" required>
+            <div class="validation-error" *ngIf="Sku_Sub_Cat_ID.invalid && Sku_Sub_Cat_ID.touched">This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label>Sku_Latitud:</label>
+            <input name="Sku_Latitud" #Sku_Latitud="ngModel" [(ngModel)]="service.formData.Sku_Latitud" class="form-control" required>
+            <div class="validation-error" *ngIf="Sku_Latitud.invalid && Sku_Latitud.touched">This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label>Sku_Longitud:</label>
+            <input name="Sku_Longitud" #Sku_Longitud="ngModel" [(ngModel)]="service.formData.Sku_Longitud" class="form-control" required>
+            <div class="validation-error" *ngIf="Sku_Longitud.invalid && Sku_Longitud.touched">This field is required.</div>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+        </div>
+        </form>
