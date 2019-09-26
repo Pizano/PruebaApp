@@ -1,0 +1,1 @@
+export const ROOT_URL:string="http://localhost:7000/api/";
